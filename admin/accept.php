@@ -1,5 +1,5 @@
 <?php
-	/*include 'config.php';
+	include 'config.php';
 		$accept=false;
 	
 		if (isset($_GET['accept'])) {
@@ -37,4 +37,4 @@
 }
 
 
-?>*/
+?>

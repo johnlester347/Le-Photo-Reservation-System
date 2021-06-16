@@ -1,0 +1,33 @@
+.btnform {
+  background-color: transparent;
+
+  transition: all 0.5s;
+}
+
+.btn-primary.btnform {
+  color: #428bca;
+}
+
+.btn-success.btnform {
+  color: #5cb85c;
+}
+
+.btn-info.btnform {
+  color: #5bc0de;
+}
+
+.btn-warning.btnform {
+  color: #f0ad4e;
+}
+
+.btn-danger.btnform {
+  color: #d9534f;
+}
+
+.btn-primary.btnform:hover,
+.btn-success.btnform:hover,
+.btn-info.btnform:hover,
+.btn-warning.btnform:hover,
+.btn-danger.btnform:hover {
+  color: #fff;
+}

@@ -6,11 +6,11 @@ include 'config.php';
 
 	if (isset($_POST['query'])) {
 		$search=$_POST['query'];
-		$stmt=$con->prepare("SELECT * FROM test1 WHERE name like CONCAT('%',?,'%')or id like CONCAT('%',?,'%')");
-		$stmt->bind_param("ss",$search,$search);
+		$stmt=$con->prepare("SELECT * FROM records WHERE name like CONCAT('%',?,'%')or id like CONCAT('%',?,'%')or date like CONCAT('%',?,'%')");
+		$stmt->bind_param("sss",$search,$search,$search);
 	}
 	else{
-		$stmt=$con->prepare("SELECT * FROM test1");
+		$stmt=$con->prepare("SELECT * FROM records");
 
 	}
 	$stmt->execute();
@@ -23,11 +23,15 @@ include 'config.php';
 							<tr>
 								<th>Id</th>
 								<th>Name</th>
-							   <th>Address</th>
+								<th>Event</th>
+								<th>Venue</th>
+							    <th>Address</th>
 								<th>School</th>
 								<th>Email</th>
 								<th>Contact</th>
 								<th>Date</th>
+								<th>Timeslot</th>
+
 							</tr>
 							</thead> 
 
@@ -38,11 +42,14 @@ include 'config.php';
 								"<tr>
 								<td>".$row['id']."</td>
 								<td>".$row['name']."</td>
+								<td>".$row['event']."</td>
+								<td>".$row['venue']."</td>
 								<td>".$row['address']."</td>
 								<td>".$row['school']."</td>
 								<td>".$row['email']."</td>
 								<td>".$row['contact']."</td>
 								<td>".$row['date']."</td>
+								<td>".$row['timeslot']."</td>
 								</tr>";
 
 							}
@@ -50,7 +57,7 @@ include 'config.php';
 							echo $output;
 						}
 						else{
-							echo "<h3> no result</h3>";
+							echo "<h3> No result!!!</h3>";
 
 						}
 							

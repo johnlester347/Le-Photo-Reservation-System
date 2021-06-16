@@ -15,31 +15,34 @@ if(isset($_SESSION['id']))
 if(isset($_POST["register"]))
 {
  $username = trim($_POST["username"]);
+ $email=trim($_POST["email"]);
  $password = trim($_POST["password"]);
  $check_query = "
  SELECT * FROM useraccount
- WHERE username = :username
+ WHERE email = :email
  ";
  $statement = $con->prepare($check_query);
  $check_data = array(
-  ':username'  => $username
+  ':email'  => $email
  );
  if($statement->execute($check_data)) 
  {
   if($statement->rowCount() > 0)
   {
-   $message.= '<p><label>Username already taken</label></p>';
+   $message.= '<p><label>Email already taken</label></p>';
   }
   else
   {
-   if(empty($username))
-   {
-    $message.= '<p><label>Username is required</label></p>';
-   }
-   if(empty($password))
-   {
-    $message.= '<p><label>Password is required</label></p>';
-   }
+  	$sel="SELECT * from useraccount where username=:username";
+  	$statement=$con->prepare($sel);
+  	$check=array(
+  		'username'=>$username
+  	);
+  	if ($statement->execute($check)) {
+
+ 		if ($statement->rowCount()>0) {
+ 		$message.="<p><label>Username already taken</label></p>";
+ 	}	
    else
    {
     if($password != $_POST['confirm_password'])
@@ -51,13 +54,14 @@ if(isset($_POST["register"]))
    {
     $data = array(
      ':username'  => $username,
+     ':email'=>$email,
      ':password'  => password_hash($password, PASSWORD_DEFAULT)
     );
 
     $query = "
     INSERT INTO useraccount 
-    (username, password) 
-    VALUES (:username, :password)
+    (username,email, password) 
+    VALUES (:username,:email, :password)
     ";
     $statement = $con->prepare($query);
     if($statement->execute($data))
@@ -69,6 +73,7 @@ if(isset($_POST["register"]))
    }
   }
  }
+}
 }
 
 ?>
@@ -94,18 +99,23 @@ if(isset($_POST["register"]))
       <span class="text-danger"><?php echo $message; ?></span>
       <div class="form-group">
        <label>Enter Username</label>
-       <input type="text" name="username" class="form-control" />
+       <input type="text" name="username" class="form-control" required />
       </div>
+       <div class="form-group">
+       <label>Email</label>
+       <input type="email" name="email" class="form-control" required />
+      </div>
+      
       <div class="form-group">
        <label>Enter Password</label>
-       <input type="password" name="password" class="form-control" />
+       <input type="password" name="password" class="form-control" required />
       </div>
       <div class="form-group">
        <label>Re-enter Password</label>
-       <input type="password" name="confirm_password" class="form-control" />
+       <input type="password" name="confirm_password" class="form-control" required />
       </div>
       <div class="form-group">
-       <input type="submit" name="register" class="btn btn-info" value="Register" />
+       <input type="submit" name="register" class="btn btn-info" value="Register" required />
       </div>
       <div align="center">
        <a href="index.php">Login</a>

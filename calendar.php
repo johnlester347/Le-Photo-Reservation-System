@@ -97,11 +97,11 @@ function build_calendar($month, $year) {
         // ?ReRrdf/r3e
         else{
             $totalbookings=checkSlot($con,$date);
-            if ($totalbookings==5) {
-                 $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='#' class='btn btn-danger btn-xs'>All Booked</a>";
+            if ($totalbookings==27) {
+                 $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='#' class='btn btn-danger btn-xs'>ALL BOOKED</a>";
             }else{
-                $available=5-$totalbookings;
-                  $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='regform.php?Book=".$date."' class='btn btn-success btn-xs'>Book</a><small><i>$available slot/s</i></small>";
+                $available=27-$totalbookings;
+                  $calendar.="<td class='$today'><h4>$currentDay</h4> <a href='regform.php?Book=".$date."' class='btn btn-success btn-xs'>BOOK</a><small><i>$available slot/s</i></small>";
             }
            
          }
@@ -138,22 +138,20 @@ function build_calendar($month, $year) {
      echo $calendar;
 
 }
-function checkSlot($con,$date){
-    $stmt = $con->prepare("SELECT * from request where date = ?");
+function checkSlot($con,$date){ 
+    $stmt = $con->prepare ("SELECT *  from records where date=?");
     $stmt->bind_param('s', $date);
     $totalbookings=0;
     if($stmt->execute()){
         $result = $stmt->get_result();
         if($result->num_rows>0){
             while($row = $result->fetch_assoc()){
-                $totalbookings++;
+                 $totalbookings++;
             }
             
-            $stmt->close();
         }
     }
     return $totalbookings;
-
 }
     
 ?>
@@ -162,7 +160,13 @@ function checkSlot($con,$date){
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <style>
        @media only screen and (max-width: 760px),
         (min-device-width: 802px) and (max-device-width: 1020px) {
@@ -201,8 +205,8 @@ function checkSlot($con,$date){
 
 
             /*
-		Label the data
-		*/
+        Label the data
+        */
             td:nth-of-type(1):before {
                 content: "Sunday";
             }
@@ -259,7 +263,7 @@ function checkSlot($con,$date){
         }
         
         .today{
-            background:yellow;
+            background:#5C9C96;
         }
         
         
@@ -274,10 +278,10 @@ function checkSlot($con,$date){
                 <?php
                      $dateComponents = getdate();
                      if(isset($_GET['month']) && isset($_GET['year'])){
-                         $month = $_GET['month']; 			     
+                         $month = $_GET['month'];                
                          $year = $_GET['year'];
                      }else{
-                         $month = $dateComponents['mon']; 			     
+                         $month = $dateComponents['mon'];                
                          $year = $dateComponents['year'];
                      }
                     echo build_calendar($month,$year);

@@ -20,7 +20,7 @@ if(isset($_POST["register"]))
 	$username = trim($_POST["username"]);
 	$password = trim($_POST["password"]);
 	$check_query = "
-	SELECT * FROM login 
+	SELECT * FROM useraccount
 	WHERE username = :username
 	";
 	$statement = $connect->prepare($check_query);
@@ -58,7 +58,7 @@ if(isset($_POST["register"]))
 				);
 
 				$query = "
-				INSERT INTO login 
+				INSERT INTO useraccount 
 				(username, password) 
 				VALUES (:username, :password)
 				";
@@ -76,7 +76,7 @@ if(isset($_POST["register"]))
 
 <html>  
     <head>  
-        <title>LE PHOTO CHAT APP FOR CLIENTS</title>  
+        <title>LE PHOTO STATION CHAT BOX FOR CLIENTS</title>  
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 		<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -86,10 +86,10 @@ if(isset($_POST["register"]))
         <div class="container">
 			<br />
 			
-			<h3 align="center">LE PHOTO CHAT APP FOR CLIENTS</a></h3><br />
+			<h3 align="center">LE PHOTO STATION CHAT BOX FOR CLIENTS</a></h3><br />
 			<br />
 			<div class="panel panel-default">
-  				<div class="panel-heading">Chat Application Register</div>
+  				<div class="panel-heading">Chat Box Register</div>
 				<div class="panel-body">
 					<form method="post">
 						<span class="text-danger"><?php echo $message; ?></span>
@@ -109,7 +109,7 @@ if(isset($_POST["register"]))
 							<input type="submit" name="register" class="btn btn-info" value="Register" />
 						</div>
 						<div align="center">
-							<a href="login.php">Login</a>
+							<a href="login.php" class="btn btn-info">Login</a>
 						</div>
 					</form>
 				</div>

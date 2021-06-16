@@ -1,5 +1,8 @@
 /*
-0- 600px: Phone 
+0 - 320px: Super Small Phone
+320 - 360px: Small Phone
+360px- 480: Phone
+480 - 600px: Phone
 600 - 900px: Tablet Portrait 
 900 - 1200px: Tablet Landscape
 [1200 -1800] is where our normal styles apply
@@ -13,6 +16,28 @@ $breakpoint arguments choices:
 
 1em = 16px example 600/16em = 37.5em
 1 rem = 10px  10px/16px = 62.5% (16 is the default font size)
+
+@include respond(ssphone) {
+    0 - 320px
+}
+@include respond(sphone) {
+    320 - 360px
+}
+@include respond(nphone) {
+    360px- 480px
+}
+@include respond(phone) {
+    480px - 600px
+}
+@include respond(tab-port) {
+    600 - 900px
+}
+@include respond(tab-land) {
+    900 - 1200px
+}
+@include respond(big-desktop) {
+    1800px and above not below
+}
 */
 @keyframes moveInLeft {
   0% {
@@ -83,12 +108,24 @@ body {
   backface-visibility: hidden;
   margin-bottom: 6rem;
   /* This is the span */ }
-  @media (max-width: 37.5em) {
-    .heading-primary {
-      margin-right: 6rem; } }
   @media (max-width: 56.25em) {
     .heading-primary {
       margin-right: 11rem; } }
+  @media (max-width: 37.5em) {
+    .heading-primary {
+      margin-right: 6rem; } }
+  @media (max-width: 30em) {
+    .heading-primary {
+      margin-right: 4rem;
+      margin-bottom: 3rem; } }
+  @media (max-width: 22.5em) {
+    .heading-primary {
+      margin-right: 4rem;
+      margin-bottom: 3rem; } }
+  @media (max-width: 20em) {
+    .heading-primary {
+      margin-right: 4rem;
+      margin-bottom: 3rem; } }
   .heading-primary--main {
     display: block;
     font-size: 4rem;
@@ -109,6 +146,21 @@ body {
       .heading-primary--main {
         font-size: 3rem;
         letter-spacing: 0.1rem; } }
+    @media (max-width: 30em) {
+      .heading-primary--main {
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        margin-left: 1rem; } }
+    @media (max-width: 22.5em) {
+      .heading-primary--main {
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        margin-left: 1rem; } }
+    @media (max-width: 20em) {
+      .heading-primary--main {
+        font-size: 2rem;
+        letter-spacing: .1rem;
+        margin-left: 1rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -124,6 +176,10 @@ body {
     @media (max-width: 37.5em) {
       .heading-primary--sub {
         font-size: 3rem;
+        letter-spacing: .5rem; } }
+    @media (max-width: 30em) {
+      .heading-primary--sub {
+        font-size: 2rem;
         letter-spacing: .5rem; } }
 
 .heading-section2 {
@@ -198,6 +254,10 @@ blockquote:before {
 .u-margin-top2 {
   margin-top: 2.2rem; }
 
+.bg-video__content {
+  height: 100%;
+  width: 100%; }
+
 .btn, .btn:link, .btn:visited {
   text-decoration: none;
   text-transform: uppercase;
@@ -209,12 +269,21 @@ blockquote:before {
   font-size: 1.6rem;
   border: none;
   cursor: pointer; }
-  @media (max-width: 37.5em) {
-    .btn, .btn:link, .btn:visited {
-      margin-right: 11rem; } }
   @media (max-width: 56.25em) {
     .btn, .btn:link, .btn:visited {
       margin-right: 11rem; } }
+  @media (max-width: 37.5em) {
+    .btn, .btn:link, .btn:visited {
+      margin-right: 11rem; } }
+  @media (max-width: 30em) {
+    .btn, .btn:link, .btn:visited {
+      margin-right: 3rem; } }
+  @media (max-width: 22.5em) {
+    .btn, .btn:link, .btn:visited {
+      margin-right: 3rem; } }
+  @media (max-width: 20em) {
+    .btn, .btn:link, .btn:visited {
+      margin-right: 3rem; } }
 
 .btn:hover {
   transform: translateY(-0.3rem);
@@ -284,7 +353,7 @@ blockquote:before {
   height: 50rem; }
   .card__side {
     height: 50rem;
-    transition: all .8s ease;
+    transition: all 0.8s ease;
     position: absolute;
     top: 0;
     left: 0;
@@ -316,11 +385,11 @@ blockquote:before {
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
     .card__picture--1 {
-      background-image: linear-gradient(to right bottom, #000, #000), url(../img/girl-camera.jpg); }
+      background-image: linear-gradient(105deg, #000, #000), url(../img/ll.jpg); }
     .card__picture--2 {
-      background-image: linear-gradient(to right bottom, #000, #000), url(../img/view-capture.jpg); }
+      background-image: linear-gradient(to right bottom, #000, #000), url(../img/slide2.jpg); }
     .card__picture--3 {
-      background-image: linear-gradient(to right bottom, #000, #000), url(../img/picography-man-camera-photographer-lens-1.jpg); }
+      background-image: linear-gradient(to right bottom, #000, #000), url(../img/l.jpg); }
   .card__heading {
     font-size: 2.8rem;
     font-weight: 300;
@@ -338,7 +407,7 @@ blockquote:before {
     text-align: right;
     color: #fff;
     position: absolute;
-    top: 10rem;
+    top: 15rem;
     right: 2rem;
     width: 75%; }
   .card__heading3 {
@@ -348,7 +417,7 @@ blockquote:before {
     text-align: right;
     color: #fff;
     position: absolute;
-    top: 13rem;
+    top: 16rem;
     right: 2rem;
     width: 75%; }
   .card__heading-span {
@@ -370,7 +439,7 @@ blockquote:before {
       .card__details ul li {
         text-align: center;
         font-size: 1.5rem;
-        padding: 1rem; }
+        padding: 0.3rem 0; }
         .card__details ul li:not(:last-child) {
           border-bottom: 1px solid #eee; }
   .card__cta {
@@ -397,14 +466,20 @@ blockquote:before {
   height: 50rem;
   margin-top: -20vh;
   width: 100%; }
-  @media (max-width: 37.5em) {
-    .next1 {
-      height: 81rem;
-      margin-top: -15vh; } }
   @media (max-width: 56.25em) {
     .next1 {
       height: 81rem;
-      margin-top: -20vh; } }
+      margin-top: -20vh;
+      padding: 31rem 0 10rem 0; } }
+  @media (max-width: 30em) {
+    .next1 {
+      padding: 20rem 0 14rem 0; } }
+  @media (max-width: 22.5em) {
+    .next1 {
+      padding: 20rem 0 11rem 0; } }
+  @media (max-width: 20em) {
+    .next1 {
+      padding: 18rem 0 7rem 0; } }
 
 .composition {
   position: relative; }
@@ -460,14 +535,26 @@ blockquote:before {
   .popup__close:hover {
     color: #7ed56f; }
   .popup__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     width: 75%;
     height: 50rem;
     background-color: #fff;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2); }
+    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    @media (max-width: 30em) {
+      .popup__content {
+        width: 100%;
+        height: 64rem; } }
+    @media (max-width: 22.5em) {
+      .popup__content {
+        width: 100%;
+        height: 80rem; } }
+    @media (max-width: 20em) {
+      .popup__content {
+        width: 100%;
+        height: 75rem; } }
   .popup__text1 {
     width: 100%;
     text-align: center; }
@@ -596,12 +683,27 @@ textarea {
 
 .header {
   height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(37, 37, 37, 0.8), rgba(0, 0, 0, 0.8)), url(../img/iso-republic-film-roll-advance.jpg);
+  background-image: linear-gradient(to right bottom, rgba(37, 37, 37, 0.8), rgba(0, 0, 0, 0.8)), url(../img/iso-republic-film-roll-advance-min.jpg);
   background-size: cover;
   background-position: top;
   -webkit-clip-path: polygon(0 0%, 100% 0%, 100% 75vh, 0 100%);
   clip-path: polygon(0 0%, 100% 0%, 100% 75vh, 0 100%);
   /* This is the div con */ }
+  @media (max-width: 56.25em) {
+    .header {
+      height: 75vh; } }
+  @media (max-width: 37.5em) {
+    .header {
+      height: 94vh; } }
+  @media (max-width: 30em) {
+    .header {
+      height: 94vh; } }
+  @media (max-width: 22.5em) {
+    .header {
+      height: 94vh; } }
+  @media (max-width: 20em) {
+    .header {
+      height: 94vh; } }
   .header__logo-box {
     position: absolute;
     top: 6rem;
@@ -794,9 +896,24 @@ hr {
   font-size: 20px;
   color: white;
   font-weight: 300; }
+  @media (max-width: 75em) {
+    .testimonial {
+      height: 59rem; } }
   @media (max-width: 56.25em) {
     .testimonial {
       height: 129rem; } }
+  @media (max-width: 37.5em) {
+    .testimonial {
+      height: 136rem; } }
+  @media (max-width: 30em) {
+    .testimonial {
+      height: 136rem; } }
+  @media (max-width: 22.5em) {
+    .testimonial {
+      height: 150rem; } }
+  @media (max-width: 20em) {
+    .testimonial {
+      height: 157rem; } }
 
 .image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.459)), url(../img/nat-10.jpg);
@@ -805,9 +922,24 @@ hr {
   height: 100vh;
   background-attachment: fixed;
   height: 50rem; }
+  @media (max-width: 75em) {
+    .image {
+      height: 59rem; } }
   @media (max-width: 56.25em) {
     .image {
       height: 129rem; } }
+  @media (max-width: 37.5em) {
+    .image {
+      height: 129rem; } }
+  @media (max-width: 30em) {
+    .image {
+      height: 136rem; } }
+  @media (max-width: 22.5em) {
+    .image {
+      height: 150rem; } }
+  @media (max-width: 20em) {
+    .image {
+      height: 157rem; } }
 
 cite {
   font-size: 90%;
@@ -835,7 +967,7 @@ cite img {
 
 .section-slider {
   padding: 4rem 0 5rem 0;
-  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(119, 119, 119, 0.8)), url(../img/nat-10.jpg);
+  background-image: linear-gradient(to right bottom, rgba(0, 0, 0, 0.8), rgba(119, 119, 119, 0.8)), url(../img/nat-10-min.jpg);
   height: 56rem;
   width: 100%;
   overflow: hidden; }
@@ -846,6 +978,15 @@ cite img {
   @media (max-width: 37.5em) {
     .section-slider {
       height: 48rem; } }
+  @media (max-width: 30em) {
+    .section-slider {
+      height: 46rem; } }
+  @media (max-width: 22.5em) {
+    .section-slider {
+      height: 33rem; } }
+  @media (max-width: 20em) {
+    .section-slider {
+      height: 29rem; } }
 
 .slideshow-container {
   max-width: 800px;
@@ -870,7 +1011,7 @@ cite img {
   width: auto;
   margin-top: -22px;
   padding: 16px;
-  color: white;
+  color: #ee0000;
   font-weight: bold;
   font-size: 18px;
   transition: 0.6s ease;

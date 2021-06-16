@@ -7,7 +7,7 @@ include 'config.php';
 
 
     // Prepare our SQL, preparing the SQL statement will prevent SQL injection.
-         if ($stmt = $con->prepare('SELECT id, password FROM admindb WHERE username = ?')) {
+         if ($stmt = $con->prepare('SELECT user_id, password FROM useraccount WHERE username = ?')) {
     // Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
             $stmt->bind_param('s', $_POST['username']);
             $stmt->execute();
@@ -19,7 +19,7 @@ include 'config.php';
 
 
     if ($stmt->num_rows> 0) {
-        $stmt->bind_result($id, $password);
+        $stmt->bind_result($user_id, $password);
         $stmt->fetch();
     // Account exists, now we verify the password.
     // Note: remember to use password_hash in your registration file to store the hashed passwords.
@@ -29,7 +29,7 @@ include 'config.php';
         //session_regenerate_id();
         $_SESSION['login'] = TRUE;
         $_SESSION['username'] = $_POST['username'];
-        $_SESSION['id'] = $id;
+        $_SESSION['user_id'] = $user_id;
             
             header("location:pending.php");
     } 

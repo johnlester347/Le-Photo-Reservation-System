@@ -6,7 +6,7 @@ session_start();
 
 $message = '';
 
-if(isset($_SESSION['user_id']))
+if(isset($_SESSION['id']))
 {
  header('location:registration.php');
 }
@@ -33,25 +33,18 @@ if(isset($_POST["login"]))
       {
         $_SESSION['id'] = $row['id'];
         $_SESSION['username'] = $row['username'];
-        // $sub_query = "
-        // INSERT INTO login_details 
-        // (user_id) 
-        // VALUES ('".$row['id']."')
-        // ";
-        // $statement = $connect->prepare($sub_query);
-        // $statement->execute();
-        // $_SESSION['id'] = $con->lastInsertId();
+        
          header("location:registration.php");
       }
       else
       {
-       $message = "<label>Wrong Password</label>";
+       $message = '<script type="text/javascript">alert("Wrong password");</script>';
       }
     }
  }
  else
  {
-  $message = "<label>Wrong Username</labe>";
+  $message ='<script type="text/javascript">alert("Wrong username");</script>';
  }
 }
 

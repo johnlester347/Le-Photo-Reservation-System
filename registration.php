@@ -26,9 +26,9 @@
 
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="chatapp/chat.php" class="navigation__link"><span>01</span>Chat Now</a></li>
-                <li class="navigation__item"><a href="calendar.php" class="navigation__link"><span>02</span>Reserve Now</a></li>
-                <li class="navigation__item"><a href="index.php" class="navigation__link"><span>03</span>Back to Login Form</a></li>
+                <li class="navigation__item"><a href="admin/imageupload/photos.php" class="navigation__link"><span>01</span>Gallery</a></li>
+                <li class="navigation__item"><a href="chatapp/chat.php" class="navigation__link"><span>02</span>Chat Now</a></li>
+                <li class="navigation__item"><a href="calendar.php" class="navigation__link"><span>03</span>Reserve Now</a></li>
                 <li class="navigation__item"><a href="logout.php" class="navigation__link"><span>04</span>Logout</a></li>
             </ul>
         </nav>
@@ -45,7 +45,8 @@
                 <span class="heading-primary--sub">PHOTOGRAPHY RESERVATION</span>
             </h1>
 
-            <a href="calendar.php" class="btn btn--white btn--animated">Reserve Now</a>
+            <a href="calendar.php" class="btn btn--white btn--animated">Reserve Now</a><br><br>
+            <a href="intruc.php" class="btn btn--white btn--animated">How to reserve Instructions</a>
         </div>
     </header>
 
@@ -53,25 +54,24 @@
         <section class="next1">
             <div class="u-center-text u-margin-bottom-big">
                 <h2 class="heading-section2">
-                    Text Here and Here and Here
+                    LE PHOTO STATION
                 </h2>
             </div>
 
             <div class="row">
                 <div class="col-1-of-2">
-                    <h3 class="heading-tertiary u-margin-bottom-small">Add Text Here</h3>
-                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, ipsum sapiente aspernatur libero repellat quis consequatur ducimus quam nisi exercitationem omnis earum qui.
-                    </p>
-
-                    <h3 class="heading-tertiary u-margin-bottom-small">Add Text Here</h3>
-                    <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nulla deserunt voluptatum nam.
-                    </p>
+                    <h3 class="heading-tertiary u-margin-bottom-small">Trusted by many clients</h3>
+                    <video class="bg-video__content" autoplay controls>
+                            <source src="img/LE PHOTO STATION VIDEO FINAL.mp4" type="video/mp4"> 
+                            <source src="img/LE PHOTO STATION VIDEO FINAL.mp4" type="video/webm"> 
+                            Your browser does not support mp4 videos
+                        </video>
 
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/GRADPIC A.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
-                        <img src="img/GRADPIC AA.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                        <img src="img/GRADPIC A-min.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                        <img src="img/GRADPIC AA-min.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
                         <img src="img/GLAMOUR.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
                     </div>
                 </div>
@@ -85,69 +85,69 @@
 
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
-                <div class="numbertext">1 / 3</div>
-                <img src="img/Graduation Package.jpg" style="width:100%">
-                <div class="text">Caption Text</div>
+                <div class="numbertext">1 / 11</div>
+                <img src="img/Graduation Package-min.jpg" style="width:100%">
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">2 / 3</div>
-                <img src="img/STUDIO PACKAGES.jpg" style="width:100%">
-                <div class="text">Caption Two</div>
+                <div class="numbertext">2 / 11</div>
+                <img src="img/STUDIO PACKAGES-min.jpg" style="width:100%">
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">3 / 11</div>
                 <img src="img/slide.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">4 / 11</div>
                 <img src="img/slide1.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">5 / 11</div>
                 <img src="img/slide2.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">6 / 11</div>
                 <img src="img/slide3.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">7 / 11</div>
                 <img src="img/slide4.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">8 / 11</div>
                 <img src="img/slide5.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">9 / 11</div>
                 <img src="img/slide6.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">10 / 11</div>
                 <img src="img/slide7.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <div class="mySlides fade">
-                <div class="numbertext">3 / 3</div>
+                <div class="numbertext">11 / 11</div>
                 <img src="img/slide8.jpg" style="width:100%">
-                <div class="text">Caption Three</div>
+
             </div>
 
             <!-- Next and previous buttons -->
@@ -173,15 +173,14 @@
                             &nbsp;
                         </div>
                         <h3 class="card__heading">
-                            <span class="card__heading-span card__heading-span--1">Graduation Picture Price</span>
+                            <span class="card__heading-span card__heading-span--1">Graduation Photo Package</span>
                         </h3>
                         <div class="card__details">
                             <ul>
-                                <li>3 day unli pictures XD</li>
-                                <li>Up to 3 peoples</li>
-                                <li>2 portrait shots</li>
-                                <li>Hot trendy shots</li>
-                                <li>Difficulty: Hard</li>
+                                <li>1pc. 11x14 Frame Graduation Portrait</li>
+                                <li>2pcs. 5R Toga/Glamour</li>
+                                <li>2pcs. 3R Filipiniana/Barong/Toga</li>
+                                <li>4pcs. Cute Size Pictures</li>
                             </ul>
                         </div>
                     </div>
@@ -189,7 +188,7 @@
                         <div class="card__cta">
                             <div class="card__price-box">
                                 <p class="card__price-only">Only</p>
-                                <p class="card__price-value">$999</p>
+                                <p class="card__price-value">&#8369;1280</p>
                             </div>
                         </div>
                     </div>
@@ -202,15 +201,16 @@
                             &nbsp;
                         </div>
                         <h3 class="card__heading2">
-                            <span class="card__heading-span card__heading-span--2">Weddings, Birthdays and Special Events</span>
+                            <span class="card__heading-span card__heading-span--2">Special Event</span>
                         </h3>
                         <div class="card__details">
                             <ul>
-                                <li>3 day unli pictures XD</li>
-                                <li>Up to 3 peoples</li>
-                                <li>2 portrait shots</li>
-                                <li>Hot trendy shots</li>
-                                <li>Difficulty: Hard</li>
+                                <li>Max 4 members</li>
+                                <li>PHP 150/person for Additional</li>
+                                <li>Max of 10 poses</li>
+                                <li>Choose 5 shots for Enhancement</li>
+                                <li>1pc. 11x14 w/ Frame</li>
+                                <li>FREE Digital Copies</li>
                             </ul>
                         </div>
                     </div>
@@ -218,7 +218,7 @@
                         <div class="card__cta">
                             <div class="card__price-box">
                                 <p class="card__price-only">Only</p>
-                                <p class="card__price-value">$999</p>
+                                <p class="card__price-value">&#8369;1250</p>
                             </div>
                         </div>
                     </div>
@@ -231,15 +231,17 @@
                             &nbsp;
                         </div>
                         <h3 class="card__heading3">
-                            <span class="card__heading-span card__heading-span--3">Special Glamour Picture</span>
+                            <span class="card__heading-span card__heading-span--3">Birthday</span>
                         </h3>
                         <div class="card__details">
                             <ul>
-                                <li>3 day unli pictures XD</li>
-                                <li>Up to 3 peoples</li>
-                                <li>2 portrait shots</li>
-                                <li>Hot trendy shots</li>
-                                <li>Difficulty: Hard</li>
+                                <li>Family/Group</li>
+                                <li>Up to 1hr. Photo Session</li>
+                                <li>Max of 8 persons</li>
+                                <li>PHP 150/person for Additional</li>
+                                <li>Choose 10 shots for Enhancement</li>
+                                <li>1pc. 16x20 Print</li>
+                                <li>FREE Digital Copies</li>
                             </ul>
                         </div>
                     </div>
@@ -247,7 +249,7 @@
                         <div class="card__cta">
                             <div class="card__price-box">
                                 <p class="card__price-only">Only</p>
-                                <p class="card__price-value">$999</p>
+                                <p class="card__price-value">&#8369;2500</p>
                             </div>
                         </div>
                     </div>

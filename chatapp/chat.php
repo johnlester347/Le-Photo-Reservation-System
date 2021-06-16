@@ -20,7 +20,7 @@ if(!isset($_SESSION['user_id']))
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>LE PHOTO CHAT APP FOR CLIENTS</title>  
+        <title>LE PHOTO STATION CHAT BOX FOR CLIENTS</title>  
 		<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdn.rawgit.com/mervick/emojionearea/master/dist/emojionearea.min.css">
@@ -33,7 +33,7 @@ if(!isset($_SESSION['user_id']))
         <div class="container">
 			<br />
 			
-			<h3 align="center">LE PHOTO CHAT APP FOR CLIENTS</h3><br />
+			<h3 align="center">LE PHOTO STATION CHAT BOX FOR CLIENTS</h3><br />
 			<br />
 			<div class="row">
 				<div class="col-md-8 col-sm-6">

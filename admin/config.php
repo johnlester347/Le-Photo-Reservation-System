@@ -1,5 +1,5 @@
  <?php
- 		$con=new mysqli("localhost","root","","finaltest");
+ 		$con=new mysqli("localhost","root","","finaltest5");
 
 
 		if ($con->connect_error) {

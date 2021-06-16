@@ -1,7 +1,7 @@
 {
-    "name": "LEPHOTO",
+    "name": "natours",
     "version": "1.0.0",
-    "description": "Landing page for LEPHOTO",
+    "description": "Landing page for Natours",
     "main": "index.js",
     "scripts": {
         "compile:sass": "node-sass sass/main.scss css/main_style.css -w"
